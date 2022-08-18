@@ -9,7 +9,7 @@ app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
   var title = "My Home Page";
-  var heading = "My Website";
+  var heading = "List View Assignment";
   res.render('pages/index',{ 
     'title':title,
     'heading':heading
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 })
 app.get('/about', (req, res) => {
   var title = "My About Page";
-  var heading = "My Website";
+  var heading = "List View Assignment";
 
   res.render('pages/about',{ 
     'title':title,
@@ -27,7 +27,7 @@ app.get('/about', (req, res) => {
 })
   app.get('/users', (req, res) => {
   var title = "Our Users";
-  var heading = "My Website";
+  var heading = "List View Assignment";
   res.render('users/index',{ 
     'title':title,
     'heading':heading,
