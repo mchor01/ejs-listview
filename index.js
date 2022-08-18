@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+var data = require('./data/test.json');
 
 app.set('view engine', 'ejs')
 //this will allow us to serve up static files, CSS, images & JS
@@ -24,14 +25,16 @@ app.get('/about', (req, res) => {
     'heading':heading
   })
 })
-  app.get('/contact', (req, res) => {
-  var title = "My Contact Page";
+  app.get('/users', (req, res) => {
+  var title = "Our Users";
   var heading = "My Website";
-  res.render('pages/contact',{ 
+  res.render('users/index',{ 
     'title':title,
-    'heading':heading
+    'heading':heading,
+    'users': data
   })
   })
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+  console.log(data)
 })
